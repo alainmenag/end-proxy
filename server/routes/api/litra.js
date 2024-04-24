@@ -26,8 +26,9 @@ litra on -s 2345FE600KC8
 litra off -s 2345FE600KC8
 */
 
-const { exec, execSync } = require('child_process');
 const router = require('express').Router();
+const { exec, execSync } = require('child_process');
+
 const devices = {};
 const deviceList = async function()
 {
