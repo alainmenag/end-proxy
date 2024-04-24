@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "litra": "^4.5.0",
+    "obs-websocket-js": "^5.0.5",
+    "websocket": "^1.0.34"
+  }
+}
