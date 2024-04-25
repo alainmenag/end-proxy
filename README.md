@@ -10,5 +10,5 @@
 # cd endProxy
 ```
 
-- [ ] [Server](server/README.md)
-- [ ] [Stream Deck Plugin](plugin-streamdeck/README.md)
+- [ ] Install & run: [Server](server/README.md)
+- [ ] Optional: [Stream Deck Plugin](plugin-streamdeck/README.md)
