@@ -1,5 +1,5 @@
 
-console.log('***** SERVER:', Date.now());
+console.log('***** SERVER:\t', Date.now());
 
 const express = require('express');
 const app = express();
@@ -42,11 +42,11 @@ app.getRoutes = () =>
 
 app.listen(api.port, api.host, () =>
 {
-	console.log('***** HTTP:', api.url);
+	console.log('***** HTTP:\t', api.url);
 
 	for ({ url, path, methods } of app.getRoutes())
 	{
-		console.log('***** HTTP:', url, methods);
+		console.log('***** HTTP:\t', url, methods);
 	}
 });
 
