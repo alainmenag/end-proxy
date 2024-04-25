@@ -3,7 +3,7 @@
 ## Requirements
 - Node.js 18+
 
-## Install
+## Get Started
 
 ```
 # git clone git@github.com:alainmenag/endProxy.git
