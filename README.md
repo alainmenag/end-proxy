@@ -1,5 +1,6 @@
 # endProxy
-[www.endproxy.com](https://www.endproxy.com)
+- [www.endproxy.com](https://www.endproxy.com)
+- [GitHub](https://github.com/alainmenag/endProxy)
 
 ## Requirements
 - Node.js 18+
