@@ -3,6 +3,7 @@
 ## Install
 
 ```
+# cd server
 # npm install
 ```
 

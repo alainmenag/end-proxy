@@ -7,6 +7,7 @@
 
 ```
 # git clone git@github.com:alainmenag/endProxy.git
+# cd endProxy
 ```
 
 - [ ] [Server](server/README.md)
