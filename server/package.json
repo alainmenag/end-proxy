@@ -1,8 +1,22 @@
 {
-  "dependencies": {
-    "express": "^4.19.2",
-    "litra": "^4.5.0",
-    "obs-websocket-js": "^5.0.5",
-    "websocket": "^1.0.34"
-  }
+	"scripts": {
+		"start": "node server.js",
+		"dev": "node-dev server.js",
+		"stop": "forever stop endProxy",
+		"process": "forever stop endProxy; forever --uid 'endProxy' --append start \"$(pwd)/server.js\";"
+	},
+	"name": "endProxy Server",
+	"version": "1.0.0",
+	"main": "server.js",
+	"keywords": [],
+	"author": "Sebastian (Alain Mena Galindo)",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.19.2",
+		"forever": "^4.0.3",
+		"litra": "^4.5.0",
+		"node-dev": "^8.0.0",
+		"obs-websocket-js": "^5.0.5",
+		"websocket": "^1.0.34"
+	}
 }

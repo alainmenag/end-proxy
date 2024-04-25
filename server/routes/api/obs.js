@@ -1,11 +1,16 @@
 /*
+	https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemlist
+
 	tail -f /Users/alain/Library/Application\ Support/obs-studio/logs/*
 
 	POST /api/obs/resource
+	
 	{"scene":"Windowed - Code","source":"Mr. Jango","match":"[Google Chrome] Mr. Jango (Dev.)"}
 	{"scene":"Windowed - Code","source":"Dev. Tools","match":"[Google Chrome] DevTools - localhost:3000/"}
 	{"scene":"Windowed - Code","source":"VSC","match":"[Code] entities.js — main (Workspace)"}
 	{"scene":"Windowed - Code","source":"Terminal","match":"npm run dev"}
+
+	{"sceneUuid":"9ddc38bd-da9b-4cde-96ca-dacd84cf1b8f","sourceUuid":"7a1e8f2a-7f4b-4dd8-9c07-8c8ab7b4ff20","match":"[Google Chrome] Mr. Jango (Dev.)"}
 */
 
 const router = require('express').Router();
@@ -67,7 +72,27 @@ OBSWebSocket.request = async ({host, password}, payload) =>
 	});
 };
 
-router.post('/resource', (async function(req, res)
+// get all scenes
+router.get('/', (async function(req, res)
+{
+	const options = {};
+
+	options.password = req.body.password || 'password';
+	options.port = req.body.port || 4444;
+	options.host = req.body.host || `ws://localhost:${ options.port }`;
+
+	const GetSceneList = await OBSWebSocket.request(options, {
+		requestType: 'GetSceneList',
+		requestId: Date.now(),
+		requestData: {
+		}
+	});
+
+	res.send(GetSceneList?.responseData?.scenes || []);
+}));
+
+// get all sources for a scene
+router.get('/:sceneUuid', (async function(req, res)
 {
 	const options = {};
 
@@ -79,14 +104,37 @@ router.post('/resource', (async function(req, res)
 		requestType: 'GetSceneItemList',
 		requestId: Date.now(),
 		requestData: {
+			sceneUuid: req.params.sceneUuid,
+		}
+	});
+	
+	res.send(GetSceneItemList?.responseData?.sceneItems || []);
+}));
+
+// re-source a scene's source
+router.post('/resource', (async function(req, res)
+{
+	const options = {};
+
+	console.log(JSON.stringify(req.body));
+
+	options.password = req.body.password || 'password';
+	options.port = req.body.port || 4444;
+	options.host = req.body.host || `ws://localhost:${ options.port }`;
+
+	const GetSceneItemList = await OBSWebSocket.request(options, {
+		requestType: 'GetSceneItemList',
+		requestId: Date.now(),
+		requestData: {
 			sceneName: req.body.scene,
+			sceneUuid: req.body.sceneUuid
 		}
 	});
 
 	const sceneItems = GetSceneItemList?.responseData?.sceneItems;
 	const sceneItem = sceneItems && sceneItems.find ? sceneItems.find((item) =>
 	{
-		return item.sourceName == req.body.source;
+		return item.sourceName == req.body.source || item.sourceUuid == req.body.sourceUuid;
 	}) : null;
 
 	// stop if not matching scene item/source

@@ -1,1 +1,1 @@
-# end-proxy
+# endProxy
