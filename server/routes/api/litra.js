@@ -29,8 +29,9 @@ litra off -s 2345FE600KC8
 const router = require('express').Router();
 const { exec, execSync } = require('child_process');
 
-const devices = {};
-const deviceList = async function()
+const api = {};
+
+api.deviceList = async function()
 {
 	return (await execSync('litra devices')).toString().split('K\n- ').map((d) =>
 	{
@@ -61,7 +62,7 @@ const deviceList = async function()
 router.get('/', (async function(req, res)
 {
 	let { id } = req.params;
-	let devices = await deviceList();
+	let devices = await api.deviceList();
 
 	res.send(devices);
 }));
@@ -69,7 +70,7 @@ router.get('/', (async function(req, res)
 router.get('/:id', (async function(req, res)
 {
 	let { id } = req.params;
-	let devices = await deviceList();
+	let devices = await api.deviceList();
 	let device = devices.filter((d) => {
 		return d.id == id;
 	})[0];
@@ -80,7 +81,7 @@ router.get('/:id', (async function(req, res)
 router.post('/dial/:id', (async function(req, res)
 {
 	let { id } = req.params;
-	let devices = await deviceList();
+	let devices = await api.deviceList();
 	let device = devices.filter((d) => {
 		return d.id == id;
 	})[0];
@@ -103,7 +104,7 @@ router.post('/dial/:id', (async function(req, res)
 
 	let s = (await execSync(cmd)).toString();
 
-	devices = await deviceList();
+	devices = await api.deviceList();
 	device = devices.filter((d) => {
 		return d.id == id;
 	})[0];
@@ -114,7 +115,7 @@ router.post('/dial/:id', (async function(req, res)
 router.post('/toggle/:id', async function(req, res)
 {
 	let { id } = req.params;
-	let devices = await deviceList();
+	let devices = await api.deviceList();
 	let device = devices.filter((d) => {
 		return d.id == id;
 	})[0];
@@ -127,7 +128,7 @@ router.post('/toggle/:id', async function(req, res)
 
 	let s = (await execSync(cmd)).toString();
 
-	devices = await deviceList();
+	devices = await api.deviceList();
 	device = devices.filter((d) => {
 		return d.id == id;
 	})[0];

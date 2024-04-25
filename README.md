@@ -14,5 +14,9 @@ git clone git@github.com:alainmenag/endProxy.git
 cd endProxy
 ```
 
+```
+touch .env
+```
+
 - [ ] **Install & run:** [Server](server)
 - [ ] Optional: [Stream Deck Plugin](plugin-streamdeck)

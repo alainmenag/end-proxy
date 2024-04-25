@@ -16,7 +16,9 @@
 const router = require('express').Router();
 const OBSWebSocket = require('obs-websocket-js').default;
 
-OBSWebSocket.request = async ({host, password}, payload) =>
+const api = {};
+
+api.request = async ({host, password}, payload) =>
 {
 	payload.requestId = payload.requestId || Date.now();
 
@@ -81,7 +83,7 @@ router.get('/', (async function(req, res)
 	options.port = req.body.port || 4444;
 	options.host = req.body.host || `ws://localhost:${ options.port }`;
 
-	const GetSceneList = await OBSWebSocket.request(options, {
+	const GetSceneList = await api.request(options, {
 		requestType: 'GetSceneList',
 		requestId: Date.now(),
 		requestData: {
@@ -100,7 +102,7 @@ router.get('/:sceneUuid', (async function(req, res)
 	options.port = req.body.port || 4444;
 	options.host = req.body.host || `ws://localhost:${ options.port }`;
 
-	const GetSceneItemList = await OBSWebSocket.request(options, {
+	const GetSceneItemList = await api.request(options, {
 		requestType: 'GetSceneItemList',
 		requestId: Date.now(),
 		requestData: {
@@ -120,7 +122,7 @@ router.post('/resource', (async function(req, res)
 	options.port = req.body.port || 4444;
 	options.host = req.body.host || `ws://localhost:${ options.port }`;
 
-	const GetSceneItemList = await OBSWebSocket.request(options, {
+	const GetSceneItemList = await api.request(options, {
 		requestType: 'GetSceneItemList',
 		requestId: Date.now(),
 		requestData: {
@@ -138,7 +140,7 @@ router.post('/resource', (async function(req, res)
 	// stop if not matching scene item/source
 	if (!sceneItem) return res.send();
 
-	const GetInputPropertiesListPropertyItems = await OBSWebSocket.request(options, {
+	const GetInputPropertiesListPropertyItems = await api.request(options, {
 		requestType: 'GetInputPropertiesListPropertyItems',
 		requestId: Date.now(),
 		requestData: {
@@ -161,7 +163,7 @@ router.post('/resource', (async function(req, res)
 	// stop if no window matched to "match" in body payload
 	if (!window) return res.send({});
 
-	const SetInputSettings = await OBSWebSocket.request(options, {
+	const SetInputSettings = await api.request(options, {
 		requestType: 'SetInputSettings',
 		requestId: Date.now(),
 		requestData: {

@@ -5,4 +5,5 @@ package-lock.json
 .editorconfig
 .history
 .git
+.env
 __exclude

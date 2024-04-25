@@ -1,0 +1,14 @@
+{
+	"scripts": {
+		"install": "cd server; npm install;",
+		"server": "cd server; npm start;"
+	},
+	"name": "endProxy",
+	"version": "1.0.0",
+	"main": "server/server.js",
+	"keywords": [],
+	"author": "Sebastian (Alain Mena Galindo)",
+	"license": "ISC",
+	"dependencies": {
+	}
+}

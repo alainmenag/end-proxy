@@ -12,6 +12,8 @@
 	"author": "Sebastian (Alain Mena Galindo)",
 	"license": "ISC",
 	"dependencies": {
+		"chokidar": "^3.6.0",
+		"dotenv": "^16.4.5",
 		"express": "^4.19.2",
 		"forever": "^4.0.3",
 		"litra": "^4.5.0",
