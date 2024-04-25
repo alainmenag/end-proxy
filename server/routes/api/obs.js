@@ -116,8 +116,6 @@ router.post('/resource', (async function(req, res)
 {
 	const options = {};
 
-	console.log(JSON.stringify(req.body));
-
 	options.password = req.body.password || 'password';
 	options.port = req.body.port || 4444;
 	options.host = req.body.host || `ws://localhost:${ options.port }`;
