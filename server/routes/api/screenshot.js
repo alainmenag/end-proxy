@@ -10,11 +10,10 @@ const api = {
 	destination: process.env.SCREENSHOT_DESTINATION,
 };
 
-//api.source = `${ api.home }/Desktop`;
-//api.destination = `${ api.home }/Documents/Screenshots`;
-
 api.move = async (path) =>
 {
+	if (!api.source || !api.destination) return;
+
 	let allowed = false;
 
 	if (path.indexOf(`${ api.source }/${ process.env.SCREENSHOT_WATCH }`) === 0) allowed = true;
