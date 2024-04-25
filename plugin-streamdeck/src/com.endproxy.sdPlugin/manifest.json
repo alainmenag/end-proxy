@@ -1,0 +1,65 @@
+{
+	"SDKVersion": 2,
+	"Author": "Sebastian (Alain Mena Galindo)",
+	"CodePath": "app.html",
+	"Description": "Connect with your endProxy.",
+	"Name": "endProxy Stream Deck Plugin",
+	"Icon": "assets/logo",
+	"URL": "https://www.endproxy.com",
+	"Version": "1.0.2",
+	"Software": {
+		"MinimumVersion": "5.0"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "10.11"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Category": "endProxy",
+	"CategoryIcon": "assets/logo",
+	"Actions": [
+
+		{
+			"Icon": "actions/litra/logo",
+			"Name": "Litra",
+			"Controllers": ["Keypad", "Encoder"],
+			"Encoder": {
+				"layout": "$B1",
+				"TriggerDescription": {
+					"Rotate": "+/-",
+					"Push": "On/Off",
+					"Touch": "Temp.",
+					"LongTouch": "Temp."
+				}
+			},
+			"States": [
+				{
+					"Image": "actions/litra/logo"
+				}
+			],
+			"Tooltip": "Control your Logitech Litra lights.",
+			"UUID": "com.litra.action",
+			"PropertyInspectorPath": "actions/litra/inspector.html"
+		}
+
+		, {
+			"Icon": "actions/obs/logo",
+			"Name": "OBS",
+			"Controllers": ["Keypad"],
+			"States": [
+				{
+					"Image": "actions/obs/logo"
+				}
+			],
+			"Tooltip": "Fix up screen capture sources (rematch).",
+			"UUID": "com.obs.action",
+			"PropertyInspectorPath": "actions/obs/inspector.html"
+		}
+
+	]
+}

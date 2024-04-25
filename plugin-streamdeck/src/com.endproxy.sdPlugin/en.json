@@ -1,0 +1,20 @@
+{
+	"Description": "Connect with your endProxy server.", 
+	"Name": "endProxy", 
+	"Category": "Services", 
+	"com.endproxy.template.action": {
+		"Name": "Action", 
+		"Tooltip": "Connect."
+	},
+	"Localization": {
+		"More info": "More info",
+		"Message": "Message",
+		"Click Me": "Click Me",
+		"Button": "Button",
+		"More": "More",
+		"My name": "My name",
+		"My title": "My title",
+		"My message": "My message",
+		"My button": "My button"
+	}
+}

@@ -1,0 +1,85 @@
+[] regular keypad buttons need to know the state/feedback as well.
+[] push a dial and go left and right to change the temp of the light.
+[] Display in the tocuh pad portion of the stream deck + the value of the temp + val of brightness.
+
+git submodule add https://github.com/elgatosf/streamdeck-javascript-sdk src/com.endproxy.sdPlugin/libs
+
+
+# Using $(pwd) to get the full absolute path to the plugin folder
+ln -s $(pwd)/src/com.endproxy.sdPlugin ~/Library/Application\ Support/com.elgato.StreamDeck/Plugins/
+
+Turn on debug osx:
+defaults write com.elgato.StreamDeck html_remote_debugging_enabled -bool YES
+
+StreamDeck Debug:
+http://localhost:23654/
+
+
+
+
+//$SD.send(context, "showOk", {});
+
+// $SD.send(context, "setState", {
+//     payload: {
+//       state: 5,
+//     },
+//   });
+
+// $SD.send(context, "openUrl", {
+//     payload: {
+//       url: 'https://www.mrjango.com',
+//     },
+//   });
+
+//$SD.send(context, "getSettings", {});
+
+
+myAction.onDidReceiveSettings(({ action, context, device, event, payload }) =>
+{
+	console.log('myAction.onDidReceiveSettings', payload);
+});
+
+
+	$SD.setTitle(context, "test");
+
+	$SD.setSettings();
+
+
+
+
+
+
+myAction.onTitleParametersDidChange(({ action, context, device, event, payload }) =>
+{
+
+	console.log(payload.title, payload.settings);
+
+});
+
+// myAction.onDidReceiveSettings(({ action, context, device, event, payload }) =>
+// {
+// 	console.log('myAction.onDidReceiveSettings', payload);
+
+// 	console.log(action, context, device, event, payload);
+
+// 	//if (!payload.settings.action) $SD.setSettings();
+
+// });
+
+
+//$SD.setTitle(context, "test"); //on/off kinda thing
+
+
+
+// SetTitle: function (context, keyPressCounter) {
+// 	var json = {
+// 		"event": "setTitle",
+// 		"context": context,
+// 		"payload": {
+// 			"title": "" + keyPressCounter,
+// 			"target": DestinationEnum.HARDWARE_AND_SOFTWARE
+// 		}
+// 	};
+
+// 	websocket.send(JSON.stringify(json));
+// },

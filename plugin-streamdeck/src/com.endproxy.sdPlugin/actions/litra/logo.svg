@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" version="1.1" viewBox="0 0 441.2 303.3">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00b8fc;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="svg2" inkscape:version="0.48.5 r10040" sodipodi:docname="Logi.svg">
+    <sodipodi:namedview id="base" bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0.5" fit-margin-left="0.5" fit-margin-right="0.5" fit-margin-top="0.5" inkscape:current-layer="layer1" inkscape:cx="885.41294" inkscape:cy="384.49862" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1030" inkscape:window-maximized="0" inkscape:window-width="1060" inkscape:window-x="858" inkscape:window-y="-10" inkscape:zoom="0.23161044" pagecolor="#ffffff" showgrid="false">
+      <inkscape:grid id="grid2996" empspacing="5" enabled="true" originx="-64.5px" originy="404.10642px" snapvisiblegridlinesonly="true" type="xygrid" visible="true"/>
+    </sodipodi:namedview>
+    <g id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1">
+      <path id="path3008" class="cls-1" d="M0,214.5V4.4h36.9v210.1H0Z" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc"/>
+      <path id="path3010" class="cls-1" d="M131.4,62.1c-47.3,0-80.1,36.4-80.1,78s35.6,78.5,80.4,78.5,79.4-31.4,79.4-78.6-30.6-77.9-79.8-77.9h0ZM130.9,97.7c24.8,0,43,19.3,43,42.5s-20.1,42.7-42.3,42.7-42.8-20.8-42.8-42.6,18.7-42.6,42.1-42.6Z" inkscape:connector-curvature="0"/>
+      <path id="path3012" class="cls-1" d="M303.9,62.1c-47.3,0-80.1,36.4-80.1,78s35.6,78.5,80.4,78.5,79.4-31.4,79.4-78.6-12-40.1-12-40.1l10.2-3.5v-29.9h-52.4s-11.4-4.4-25.6-4.4h0ZM303.4,97.7c24.8,0,43,19.3,43,42.5s-20.1,42.7-42.3,42.7-42.8-20.8-42.8-42.6,18.7-42.6,42.1-42.6h0Z" inkscape:connector-curvature="0" sodipodi:nodetypes="ssssccccssssss"/>
+      <path id="path3014" class="cls-1" d="M346.1,224.8c0,24.7-20.1,42.8-42.3,42.8s-42.9-21-42.9-42.8h-37.4c0,46.5,35.6,78.5,80.4,78.5s79.4-31.3,79.4-78.5h-37.2Z" inkscape:connector-curvature="0" sodipodi:nodetypes="csccscc"/>
+      <path id="path3016" class="cls-1" d="M398.4,214.5V66.5h36.9v148h-36.9Z" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc"/>
+      <path id="path3020" class="cls-1" d="M441.2,24.4c0,13.5-10.9,24.4-24.4,24.4s-24.4-10.9-24.4-24.4S403.3,0,416.8,0s24.4,10.9,24.4,24.4Z" sodipodi:cx="467.7894" sodipodi:cy="386.78851" sodipodi:rx="19.317442" sodipodi:ry="19.317442" sodipodi:type="arc"/>
+    </g>
+  </g>
+</svg>
