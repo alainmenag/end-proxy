@@ -14,11 +14,17 @@
 	"dependencies": {
 		"chokidar": "^3.6.0",
 		"dotenv": "^16.4.5",
+		"ejs": "^3.1.9",
 		"express": "^4.19.2",
+		"express-fileupload": "^1.4.3",
+		"express-handlebars": "^5.2.0",
+		"express-session": "^1.17.1",
 		"forever": "^4.0.3",
 		"litra": "^4.5.0",
 		"node-dev": "^8.0.0",
 		"obs-websocket-js": "^5.0.5",
+		"socket.io": "^4.7.4",
+		"uuid": "^9.0.1",
 		"websocket": "^1.0.34"
 	}
 }

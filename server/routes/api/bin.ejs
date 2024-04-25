@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+	<head>
+
+		<title>Bin</title>
+
+		<style>
+
+			html, body {
+				min-width: 100%;
+				min-height: 100%;
+				padding: 0;
+				margin: 0;
+				background: none;
+			}
+
+			#payloads .payload {
+				padding: 25px;
+				display: block;
+				font-family: monospace;
+				unicode-bidi: isolate;
+				white-space: pre;
+				overflow: auto;
+			}
+
+			#payloads .payload:nth-child(odd) {
+				background-color: #f2f2f2;
+			}
+
+		</style>
+
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+		<script>
+		
+			var socket = io(window.location.origin, {
+				//path: '/socket.io',
+				autoConnect: true,
+				transports: ['websocket'],
+				query: {id: '<%- params.id %>'}
+			});
+		
+			socket.on('connect', function()
+			{
+				console.log('***** Socket.io:', 'CONNECTED');
+			});
+		
+			socket.on('connect_error', function(err)
+			{
+				console.log('***** Socket.io:', 'ERROR', err);
+			});
+			
+			socket.on('disconnect', function()
+			{
+				console.log('***** Socket.io:', 'DISCONNECTED');
+			});
+		
+			socket.on('data', function(data)
+			{
+				console.log('***** Socket.io:', 'DATA', data);
+		
+				let div = document.createElement('div');
+
+				div.className = 'payload';
+				div.innerHTML = JSON.stringify(data, null, 2);
+
+				payloads.prepend(div);
+
+			});
+		
+		</script>
+
+	</head>
+
+	<body>
+
+		<div id="payloads"></div>
+
+	</body>
+
+</html>
