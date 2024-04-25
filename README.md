@@ -1,5 +1,5 @@
 # endProxy
-[www.endproxy.com](https://www.endproxy.com){:target="_blank" rel="noopener"}
+[www.endproxy.com](https://www.endproxy.com)
 
 ## Requirements
 - Node.js 18+
