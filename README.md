@@ -7,8 +7,11 @@
 ## Get Started
 
 ```
-# git clone git@github.com:alainmenag/endProxy.git
-# cd endProxy
+git clone git@github.com:alainmenag/endProxy.git
+```
+
+```
+cd endProxy
 ```
 
 - [ ] **Install & run:** [Server](server)

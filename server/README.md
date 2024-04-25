@@ -3,24 +3,31 @@
 ## Install
 
 ```
-# cd server
-# npm install
+cd server
+```
+
+```
+npm install
 ```
 
 ### Start as Terminal Process
+
 ```
-# npm start
+npm start
 ```
 
 ### Start as Background Process
+
 ```
-# npm run process
+npm run process
 ```
+
 ```
-# npm run stop
+npm run stop
 ```
 
 ### Start as Dev.
+
 ```
-# npm run dev
+npm run dev
 ```
