@@ -45,7 +45,7 @@ router.use([
 }));
 
 router.use([
-	'/_*',
+	'/_*'
 ], (async function(req, res) // /api/screenshot
 {
 	res.redirect(307, `/_${ uuidv4() }`);

@@ -16,6 +16,8 @@
 const router = require('express').Router();
 const OBSWebSocket = require('obs-websocket-js').default;
 
+const obsSub = require('./obs-sub.js');
+
 const api = {};
 
 api.request = async ({host, password}, payload) =>
@@ -73,6 +75,8 @@ api.request = async ({host, password}, payload) =>
 		});
 	});
 };
+
+router.use('/actions', obsSub);
 
 // get all scenes
 router.get('/', (async function(req, res)
