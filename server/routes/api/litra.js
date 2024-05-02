@@ -33,8 +33,15 @@ const api = {};
 
 api.deviceList = async function()
 {
-	return (await execSync('litra devices')).toString().split('K\n- ').map((d) =>
+	const str = (await execSync('litra devices')).toString();
+	const list = str ? str.split('K\n- ') : null;
+
+	if (!str || !list.length) return [];
+
+	return list.map((d) =>
 	{
+		if (!d) return;
+		
 		const [dTitle, dBrightness, dTemperature] = d.split('\n  - ');
 
 		let device = {
